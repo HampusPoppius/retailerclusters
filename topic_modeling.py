@@ -4,7 +4,7 @@ from sklearn.decomposition import LatentDirichletAllocation
 import sqlite3
 
 
-conn = sqlite3.connect('database.db')
+conn = sqlite3.connect('C:\~\database.db')
 c = conn.cursor()
 data = pd.DataFrame(c.execute("SELECT product_id, product_name, shop_name, shop_id\
     FROM MAIN WHERE batch = '01-02-20'"))
