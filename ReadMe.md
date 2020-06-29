@@ -9,7 +9,7 @@ offer). The output is a pre-specified number of clusters that are probability di
 algorithm generates a representation of each retailer as a probability distribution over the clusters. The LDA was initially 
 developed to cluster text documents based on what "topics" they are about.
 
-The full description is the same as on my [link](https://sites.google.com/view/hampuspoppius/extra/e-tailer-clustering "personal website")
+The full description is the same as on my [personal website](https://sites.google.com/view/hampuspoppius/extra/e-tailer-clustering "personal website")
 
 Full description
 ----------------
