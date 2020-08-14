@@ -7,13 +7,14 @@ import sqlite3
 conn = sqlite3.connect('C:\~\database.db')
 c = conn.cursor()
 data = pd.DataFrame(c.execute("SELECT product_id, product_name, shop_name, shop_id\
-    FROM MAIN WHERE batch = '01-02-20'"))
+                               FROM MAIN\ 
+                               WHERE batch = '01-02-20'"))
 c.close()
 conn.close()
 
 data.columns = ['product_id','product_name','shop_name','shop_id']
 
-# Create list of retailers that offer at least 20 products
+# Create list of retailers that offer at least 50 products
 counts = data.groupby('shop_id').size().reset_index(name='n_products')
 shops = counts.loc[counts['n_products'] >= 50,'shop_id']
 shop_names = data.loc[data['shop_id'].isin(shops),['shop_id','shop_name']].groupby('shop_id').first()
@@ -27,7 +28,7 @@ product_names = data.loc[data['product_id'].isin(products),['product_id','produc
 
 # Empty data frame to fill with ones and zeros (OneHotEncoder raises MemoryError)
 input_dummies = pd.DataFrame(0, index=shops,\
-    columns=products,dtype=bool) 
+                             columns=products,dtype=bool) 
 
 
 # impute ones in the columns for which product the retailer offers
